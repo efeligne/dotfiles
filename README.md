@@ -16,3 +16,7 @@ If you prefer iTerm2, you'ill need to import the profile from .dotfiles/item, se
 After launching neovim for the first time, you'll need to wait for the installation and configuration to complete.
 
 Install tmux plugins after launching tmux session for the first time. You'll need to use Ctrl+Space+I combination for this.
+
+## Screenshot
+
+![image](https://github.com/efeligne/dotfiles/assets/24323374/4f9ee385-3bba-4c2f-aa81-7801e3444f41)
