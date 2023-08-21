@@ -4,11 +4,9 @@
 CONFIG=$HOME/.config
 DOTFILES=$HOME/.dotfiles
 
-## Install command line tools
-xcode-select --install
-
 ## Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --skip-chsh
+rm $HOME/.zshrc
 
 ## Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -18,11 +16,11 @@ brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono-nerd-font
 
 ## Install packages
-brew install exa bat ripgrep w3m pandoc tmux neovim tree-sitter luarocks starship
+brew install exa bat ripgrep w3m pandoc tmux neovim tree-sitter luarocks starship rustup
 brew install --cask iterm2 alacritty
 
 ## Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup-init -y
 
 mkdir -p $CONFIG/git
 
