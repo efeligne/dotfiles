@@ -6,7 +6,6 @@ local servers = {
   "clangd",
   "pyright",
   "tailwindcss",
-  "sourcekit",
 }
 
 return {
@@ -88,6 +87,19 @@ return {
         },
       },
     }
+
+    config.sourcekit.setup({
+      cmd = { 'sourcekit-lsp' },
+      on_attach = function()
+        vim.api.nvim_create_autocmd('LspAttach', {
+          group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+          callback = function(ev)
+            -- enable omnifunc completion
+            vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+          end
+        })
+      end
+    })
   end,
   opts = {}
 }

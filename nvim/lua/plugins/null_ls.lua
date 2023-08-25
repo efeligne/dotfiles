@@ -8,6 +8,8 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.rustfmt,
+        null_ls.builtins.formatting.swift_format,
+        null_ls.builtins.diagnostics.swiftlint,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

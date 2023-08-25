@@ -30,6 +30,7 @@ return {
         "vim",
         "vimdoc",
         "yaml",
+        "swift",
       },
     }
   end
