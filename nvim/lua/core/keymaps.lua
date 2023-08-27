@@ -37,6 +37,7 @@ local M = {
     ['<Leader>fg'] = { '<cmd>Telescope live_grep<cr>', 'Telescope: Live Grep' },
     ['<Leader>fb'] = { '<cmd>Telescope buffers<cr>', 'Telescope: Buffers' },
     ['<Leader>fh'] = { '<cmd>Telescope help_tags<cr>', 'Telescope: Help Tags' },
+    ['<Leader>fc'] = { '<cmd>TodoTelescope<cr>', 'Telescope: Find Todo Comments' },
     ['<Leader>gc'] = { '<cmd>Telescope git_commits<cr>', 'Telescope: Git Commits' },
     ['<Leader>gb'] = { '<cmd>Telescope git_branches<cr>', 'Telescope: Git Branches' },
     ['<Leader>gs'] = { '<cmd>Telescope git_status<cr>', 'Telescope: Git Status' },
