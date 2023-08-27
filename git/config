@@ -1,6 +1,6 @@
 [core]
   editor = nvim
-	excludesfile = /Users/efeligne/.config/git/.gitignore
+	pager = bat
 [init]
   defaultBranch = main
 [merge]
