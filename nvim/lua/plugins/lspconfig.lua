@@ -8,12 +8,16 @@ local servers = {
   "tailwindcss",
 }
 
+
 return {
   'neovim/nvim-lspconfig',
   config = function()
     local config = require('lspconfig')
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
     for _, lsp in ipairs(servers) do
-      config[lsp].setup {}
+      config[lsp].setup {
+        capabilities = capabilities
+      }
     end
 
     -- eslint
@@ -24,10 +28,12 @@ return {
           command = "EslintFixAll"
         })
       end,
+      capabilities = capabilities,
     }
 
     -- lua
     config.lua_ls.setup {
+      capabilities = capabilities,
       settings = {
         Lua = {
           runtime = {
@@ -60,6 +66,7 @@ return {
 
     -- rust
     config.rust_analyzer.setup {
+      capabilities = capabilities,
       on_attach = function(client, bufnr)
         require("completion").on_attach(client)
         vim.api.nvim_create_autocmd("BufWritePre", {
@@ -90,6 +97,7 @@ return {
 
     config.sourcekit.setup({
       cmd = { 'sourcekit-lsp' },
+      capabilities = capabilities,
       on_attach = function()
         vim.api.nvim_create_autocmd('LspAttach', {
           group = vim.api.nvim_create_augroup('UserLspConfig', {}),
