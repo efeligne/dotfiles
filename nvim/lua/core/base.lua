@@ -21,7 +21,7 @@ g.loaded_netrwPlugin = 1
 o.foldcolumn = '0'
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 o.foldlevel = 99
-o.folelevelstart = 99
+o.foldlevelstart = 99
 o.foldenable = true
 
 opt.title = true
