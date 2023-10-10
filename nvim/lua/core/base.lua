@@ -51,6 +51,7 @@ opt.path:append { '**' }
 opt.wildignore:append { '*/node_modules/**' }
 
 g.rustfmt_autosave = 1
+g.loaded_perl_provider = 0
 
 opt.spell = false
 opt.spelllang = { 'en_us', 'ru_ru' }

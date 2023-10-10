@@ -1,5 +1,6 @@
-export TERM="xterm-256color"
-[[ -n $TMUX ]] && export TERM="screen-256color"
+# export TERM="xterm-256color"
+export TERM="screen-256color"
+# [[ -n $TMUX ]] && export TERM="screen-256color"
 
 if type brew &>/dev/null
 then
@@ -69,3 +70,4 @@ fi
 . "$HOME/.cargo/env"
 eval "$(starship init zsh)"
 
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

@@ -12,7 +12,7 @@ brew tap homebrew/cask-fonts &&
 brew install --cask --force font-jetbrains-mono-nerd-font &&
 
 echo '---- INSTALLING PACKAGES ----' &&
-brew install exa bat ripgrep w3m pandoc tmux neovim tree-sitter luarocks swift-format swiftlint starship rustup zsh-autosuggestions jq &&
+brew install exa bat ripgrep w3m pandoc tmux neovim tree-sitter luarocks starship rustup zsh-autosuggestions jq &&
 brew install --cask --force iterm2 alacritty &&
 
 echo '---- INSTALLING RUST ----' &&
