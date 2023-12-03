@@ -49,6 +49,8 @@ M.mason = {
     "tailwindcss-language-server",
     "deno",
     "prettier",
+    "eslint_d",
+    "node-debug2-adapter",
 
     -- c/cpp stuff
     "clangd",
