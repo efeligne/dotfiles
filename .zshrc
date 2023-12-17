@@ -43,7 +43,7 @@ mdview() {
   pandoc "$1" | w3m -T text/html
 }
 
-alias py="python3.11"
+alias py="python3.12"
 alias python="python3.9"
 alias lsl="exa -lg --git --icons --header --group-directories-first"
 alias dir="exa -lag --git --icons --header --group-directories-first"
@@ -71,3 +71,6 @@ fi
 eval "$(starship init zsh)"
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
