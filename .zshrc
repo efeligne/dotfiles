@@ -4,14 +4,15 @@ export TERM="screen-256color"
 
 if type brew &>/dev/null
 then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
   compinit
 fi
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
+LD_LIBRARY_PATH=$HOME/.oracle/bin/oracle/instantclient_19_8:$LD_LIBRARY_PATH
+
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin:$LD_LIBRARY_PATH:$PATH
 
 export HISTFILE=~/.config/zsh/.zsh_history
 
@@ -25,10 +26,11 @@ plugins=(
   git vagrant sudo brew
   docker docker-compose 
   macos tmux python pip
-  node npm nvm yarn z 
+  node npm nvm yarn z kubectl
+  minikube
 )
 source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -54,14 +56,16 @@ alias rf="rm -rf"
 alias cls="clear"
 alias md="create_dir_and_cd"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+alias getBearer="/bin/zsh /Users/aleksandr.kositsyn/Developer/flora/getToken.sh"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+
+eval "$(/usr/local/bin/brew shellenv)"
 
 if type brew &>/dev/null
 then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
   compinit
@@ -70,7 +74,4 @@ fi
 . "$HOME/.cargo/env"
 eval "$(starship init zsh)"
 
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
